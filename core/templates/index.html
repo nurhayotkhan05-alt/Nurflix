@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NUR FLIX — kinolar o‘zbek tilida</title>
+  <meta name="description" content="NUR FLIX — hind va jahon kinolari: yangi filmlar, janrlar, reytinglar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="NUR FLIX bosh sahifa">
+      <span class="logo-mark">▶</span><span>NUR <b>FLIX</b></span>
+    </a>
+    <nav class="nav" aria-label="Asosiy menyu">
+      <a href="index.html" class="active">Bosh sahifa</a>
+      <a href="#new">Yangi kinolar</a>
+      <div class="nav-genres">
+        <button type="button" id="genresBtn" aria-haspopup="true" aria-expanded="false">Janrlar ▾</button>
+        <div class="genre-menu hidden" id="genreMenu"></div>
+      </div>
+    </nav>
+    <div class="search" role="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
+      <label for="searchInput" class="sr-only">Film nomi bo‘yicha qidirish</label>
+      <input id="searchInput" type="search" placeholder="Film nomini kiriting…" autocomplete="off">
+      <div class="search-suggest hidden" id="searchSuggest"></div>
+    </div>
+    <button class="btn btn-primary btn-sm" id="loginBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>
+      <span class="login-btn-text">Kirish</span>
+    </button>
+    <button class="menu-toggle" type="button" aria-label="Menyu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="hero" aria-label="Tavsiya etilgan filmlar"></section>
+
+<main class="container">
+  <div class="ad-slot" data-ad-slot="1"></div>
+
+  <section class="section" id="popular">
+    <div class="section-head"><h2 class="section-title">Ommabop hind kinolari</h2></div>
+    <div class="row-scroll" id="popularRow"></div>
+  </section>
+
+  <div class="ad-grid">
+    <div class="ad-slot" data-ad-slot="2"></div>
+    <div class="ad-slot" data-ad-slot="3"></div>
+  </div>
+
+  <section class="section" id="new">
+    <div class="section-head"><h2 class="section-title">Yangi kinolar</h2></div>
+    <div class="row-scroll" id="newRow"></div>
+  </section>
+
+  <div class="ad-slot" data-ad-slot="4"></div>
+
+  <section class="section" id="top">
+    <div class="section-head"><h2 class="section-title">Eng yuqori baholanganlar</h2></div>
+    <div id="topRow"></div>
+  </section>
+
+  <div class="ad-slot" data-ad-slot="5"></div>
+
+  <section class="section" id="all">
+    <div class="section-head">
+      <h2 class="section-title">Barcha kinolar</h2>
+      <div class="filters">
+        <label for="genreFilter" class="sr-only">Janr bo‘yicha filtr</label>
+        <select class="select" id="genreFilter"><option value="">Barcha janrlar</option></select>
+        <label for="sortSelect" class="sr-only">Saralash</label>
+        <select class="select" id="sortSelect">
+          <option value="new">Avval yangilari</option>
+          <option value="rating">Reyting bo‘yicha</option>
+          <option value="title">Nomi bo‘yicha (A–Z)</option>
+        </select>
+      </div>
+    </div>
+    <div class="filters" id="activeFilters" style="margin-bottom:16px"></div>
+    <div class="grid" id="allGrid"></div>
+    <nav class="pagination" id="pagination" aria-label="Sahifalar"></nav>
+  </section>
+
+  <div class="ad-slot" data-ad-slot="6"></div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a class="logo" href="index.html"><span class="logo-mark">▶</span><span>NUR <b>FLIX</b></span></a>
+    <span>© <span id="year"></span> NUR FLIX. Barcha huquqlar himoyalangan.</span>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>
